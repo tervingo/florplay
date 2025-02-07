@@ -1,0 +1,17 @@
+---
+import '../styles/navbar.css';
+
+const menuItems = [
+    { title: 'Inicio', href: '#inicio' },
+    { title: 'Trayectoria', href: '#trayectoria' },
+    { title: 'Propósito', href: '#proposito' },
+    { title: 'Proyecto', href: '#proyecto' },
+    { title: 'Ubicación', href: '#ubicacion' }
+];
+---
+
+<nav class="navbar">
+    {menuItems.map(item => (
+        <a href={item.href} class="nav-item">{item.title}</a>
+    ))}
+</nav>

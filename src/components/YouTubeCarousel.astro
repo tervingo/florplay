@@ -1,0 +1,54 @@
+---
+import '../styles/youtube.css';
+
+interface Video {
+  id: string;
+  title: string;
+}
+
+interface Props {
+  videos: Video[];
+}
+
+const { videos } = Astro.props;
+---
+
+<div id="youtubeCarousel" class="youtube-carousel">
+  <div class="thumbnails">
+    {videos.map((video) => (
+      <div class="thumbnail-container">
+        <img 
+          src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+          alt={video.title}
+          class="thumbnail"
+          data-video-id={video.id}
+        />
+        <span class="video-title">{video.title}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+<script>
+    function initializeCarousel() {
+      const carousel = document.getElementById('youtubeCarousel');
+      if (!carousel) return;
+
+      carousel.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const container = target.closest('.thumbnail-container');
+        if (!container) return;
+
+        const img = container.querySelector('img');
+        if (!img) return;
+
+        const videoId = img.dataset.videoId;
+        if (videoId) {
+          window.open(`https://youtube.com/shorts/${videoId}`, '_blank');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeCarousel);
+</script>

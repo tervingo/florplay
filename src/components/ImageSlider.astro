@@ -1,0 +1,50 @@
+---
+import '../styles/slider.css';
+
+interface Props {
+  images: string[];
+  width?: string;
+  height?: string;
+}
+
+const { images, width = "350px", height = "500px" } = Astro.props;
+---
+
+<div class="slider-container">
+  <div id="imageSlider"
+    class="slider"
+    data-images={JSON.stringify(images)}>
+    <img 
+      src={images[0]} 
+      alt="Slider image"
+      class="slider-image"
+      style={`width: ${width}; height: ${height};`}
+    />
+  </div>
+</div>
+
+<script>
+  function initializeSlider() {
+    const slider = document.getElementById('imageSlider');
+    if (!slider) return;
+
+    const images = JSON.parse(slider.dataset.images || '[]');
+    let currentImage = 0;
+    const imgElement = slider.querySelector('img');
+
+    if (!imgElement) return;
+
+    setInterval(() => {
+      currentImage = (currentImage + 1) % images.length;
+      imgElement.style.opacity = '0';
+      
+      setTimeout(() => {
+        imgElement.src = images[currentImage];
+        imgElement.style.opacity = '1';
+      }, 500);
+    }, 4000);
+  }
+
+  // Inicializar el slider cuando el documento esté listo
+  document.addEventListener('DOMContentLoaded', initializeSlider);
+</script>

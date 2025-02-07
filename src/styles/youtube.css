@@ -1,0 +1,34 @@
+.youtube-carousel {
+    margin: 2rem auto;
+    max-width: 1000px;
+  }
+  
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .thumbnail-container {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .thumbnail-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .video-title {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }

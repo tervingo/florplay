@@ -1,11 +1,218 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ImageSlider from '../components/ImageSlider.astro';
+import YouTubeCarousel from '../components/YouTubeCarousel.astro';
+import Navbar from '../components/Navbar.astro';
+import Modal from '../components/Modal.astro';
+import '../styles/index.css';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Define el array de imágenes
+const images = [
+  '/florplay/images/menis.jpg',
+  '/florplay/images/manos.jpg',
+];
+
+const videos = [
+  {
+    id: 'Gk-mXcxY8jw',
+    title: 'Fascia plantar'
+  },
+  {
+	id: 'ZQzQP06n_hw',
+	title: 'Memoria autobiográfica'
+  },
+  {
+	id: 'YeSM_GWrblA',
+	title: 'Funciones ejecutivas'
+  }
+  // Añade aquí más videos con sus IDs y títulos
+];
+
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="María Florencia Vidal">
+  <Navbar />
+  <main class="container">
+    <h1>María Florencia Vidal</h1>
+  
+    
+    <section id="inicio">
+      <div class="centered">
+        <img 
+          src="/florplay/images/flor_refinitiva.jpg"
+          alt="Slider image"
+          width="350px"
+          height="500px"
+        />
+      </div>
+ 
+
+    <div class="quote-container">
+      "La única - y solo única - función del terapeuta es la de acompañar con humildad el proceso curativo que viene marcado por los ritmos del individuo en dirección a reconducir su propia salud."
+    </div>
+    <div class="quote-author">
+      María Florencia Vidal
+    </div>
+
+    <section id="trayectoria">
+        <h2>Trayectoria Profesional</h2>
+        <div class="centered">
+            <img 
+              src="/florplay/images/CFC.jpg"
+              alt="Slider image"
+              width="90px"
+              height="90px"
+            />
+        </div>
+        <div class="centered">
+          <p>Colegiada 17176 por el Colegio de Fisioterapeutas de Catalunya</p>
+        </div>
+
+        <br/>
+        <h3>Máster en Neurociencias</h3>
+        Universitat de Barcelona (UB)
+        <p>2023 – Actualidad</p>
+
+        <h3>Osteópata Eur Ost DO</h3>
+        Escola d ́ Osteopatía de Barcelona (EOB)
+        Certificación Universitat Pompeu Fabra y European School of Osteopathy
+        <p>2019 – 2023</p>
+
+        <h3>Licenciada en Fisioterapia</h3>
+        Universidad de Buenos Aires (UBA)
+        <p>2011 – 2018</p>
+
+        <h3>Disectora y Docente de Anatomía Humana</h3>
+        Universidad de Buenos Aires (UBA)
+        <p>2013 – 2014</p>
+
+        <h3>Maestría y Profesorado de Educación Física</h3>
+        Instituto Superior de Educación Física Dr. Enrique Romero Brest. Especialización en Educación Física Especial
+        <p>2009 - 2012</p>
+
+        <div class="author-info">
+          <a href="https://www.linkedin.com/in/mar%C3%ADa-florencia-vidal-a661b717b/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+            <img 
+            src="/florplay/images/linkedin-svgrepo-com.svg"
+            alt="Slider image"
+            width="50px"
+            height="50px"
+          />
+          </a>
+          <h4 class="author-name">María Florencia Vidal</h4>
+        </div>
+    </section>
+
+    <section id="proposito">
+      <h2>Propósito y enfoque terapéutico</h2>
+      <br/>
+      <h3>Propósito</h3>
+      <br/>
+      <div class="contenedor-texto">
+      El propósito consiste en acompañar con humildad y humanidad el proceso curativo marcado
+      por los ritmos orgánicos del propio individuo que buscan reconducirlo nuevamente hacia su
+      equilibrio y salud.
+      </div>
+      
+      <h3>Enfoque terapéutico</h3>
+      
+      <h4 class="centered">Osteopatía y Neurociencia Integrativa</h4>
+      
+      <div class="contenedor-texto">
+      La palabra <i>«Zeitgeist»</i> es una expresión del idioma alemán que significa “el espíritu del tiempo” y se refiere a
+      un conjunto general de ideas, creencias o sensaciones que son comunes en un periodo particular de la historia.
+      He aquí dos pioneros de la misma época, separados por un océano y a la vez reunidos por la misma visión o
+      <i>«Zeitgeist»</i> sobre el cuerpo humano.
+      </div>
+
+      <div class="contenedor-1">
+          <div class="centered">
+            <img 
+              src="/florplay/images/TS.jpg"
+              alt="Slider image"
+              width="220px"
+              height="300px"
+            />
+          </div>
+      </div>
+     
+      <div class="centered">
+        <Modal id="algoritmo-info" trigger="saber más">
+          <div slot="texto-principal">
+            <div class="quotes-inline">
+              <div class="quotes">“La mente y el cuerpo están conectados y, por lo tanto, <br/> no se puede curar uno sin tener en cuenta al otro” </div>
+            </div>
+            <div class="author">Andrew Taylor Still</div>
+          </div>
+          <div slot="contenido-popup">
+            <p>Andrew Taylor Still (1828 - 1917), médico estadounidense considerado el padre de la Osteopatía, fue quien sentó los principios de las Leyes Osteopáticas basadas en la Naturaleza y aplicadas al ser humano y que gobiernan los mecanismos que reconducen al propio organismo en dirección al restablecimiento del equilibrio y su salud.
+            </p>
+          </div>
+        </Modal>
+      </div>
+
+
+      <div class="contenedor-1">
+        <div class="centered">
+          <img 
+            src="/florplay/images/RyC.jpg"
+            alt="Slider image"
+            width="220px"
+            height="300px"
+          />
+        </div>
+    </div>
+
+    <div class="centered">
+    <Modal id="algoritmo-info" trigger="saber más">
+      <div slot="texto-principal">
+        <div class="quotes-inline">
+          <div class="quotes">“Mientras nuestro cerebro sea un misterio, el Universo, <br/>reflejo de la estructura del cerebro, también lo será”</div>
+        </div>
+        <div class="author">Santiago Ramón y Cajal</div>
+      </div>
+      <div slot="contenido-popup">
+        <p>Santiago Ramón y Cajal (1852 - 1934) fue un médico y científico español considerado el padre de la Neurociencia y apasionado por el estudio de la Histología y Anatomía de la estructura del sistema nervioso. Pionero en la descripción de la célula nerviosa o neurona, con uno de sus aportes fundamentales denominado «Doctrina Neuronal» basado en que el cerebro está compuesto por neuronas individuales y a la vez sumamente interconectadas entre sí, creando innumerables circuitos neuronales y que en la actualidad siguen siendo una fuente inagotable de conocimiento de la Neurociencia Moderna.
+        </p>
+      </div>
+    </Modal>
+    </div>
+
+    <div class="slider-section">
+        <ImageSlider 
+          images={images} 
+          width="350px" 
+          height="500px" 
+        />
+    </div>
+
+  </section>
+
+  <section id="proyecto">
+      <h2>Proyecto comunitario</h2>
+
+      <img 
+      src="/florplay/images/logo.jpg"
+      alt="Buho"
+      width="400px"
+      height="455px"
+    />
+  
+    <div class="text-box-center">
+      Flor de Anatomía tiene el objetivo de compartir libremente el conocimiento académico y divulgación científica sobre el cuerpo humano de forma integrativa y dinámica, añadiendo conceptos de aplicabilidad clínica que puedan ser útiles en la autocomprensión de nuestra salud.
+      
+      ¡Te espero! Para que juntos descubramos una nueva forma de entender el cuerpo humano y su salud.  
+    </div>
+
+      <div class="youtube-section">
+        <YouTubeCarousel videos={videos} />
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <h2>Ubicación</h2>
+
+    </section>
+
+  </main>
 </Layout>

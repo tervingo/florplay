@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.2.3"
+    "@astrojs/react": "^4.2.0",
+    "astro": "^5.2.3",
+    "lucide-react": "^0.474.0"
   }
 }
