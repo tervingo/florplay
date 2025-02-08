@@ -13,42 +13,93 @@ interface Props {
 const { videos } = Astro.props;
 ---
 
-<div id="youtubeCarousel" class="youtube-carousel">
-  <div class="thumbnails">
-    {videos.map((video) => (
-      <div class="thumbnail-container">
-        <img 
-          src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
-          alt={video.title}
-          class="thumbnail"
-          data-video-id={video.id}
-        />
-        <span class="video-title">{video.title}</span>
-      </div>
-    ))}
+<div class="youtube-carousel-container">
+  <button class="nav-button prev" aria-label="Previous videos">
+    <span>&#10094;</span>
+  </button>
+
+  <div id="youtubeCarousel" class="youtube-carousel">
+    <div class="thumbnails">
+      {videos.map((video) => (
+        <div class="thumbnail-container">
+          <img
+            src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+            alt={video.title}
+            class="thumbnail"
+            data-video-id={video.id}
+          />
+          <span class="video-title">{video.title}</span>
+        </div>
+      ))}
+    </div>
   </div>
+
+  <button class="nav-button next" aria-label="Next videos">
+    <span>&#10095;</span>
+  </button>
 </div>
 
-
 <script>
-    function initializeCarousel() {
-      const carousel = document.getElementById('youtubeCarousel');
-      if (!carousel) return;
+  function initializeCarousel() {
+    const carousel = document.querySelector('.thumbnails') as HTMLElement;
+    const prevButton = document.querySelector('.prev') as HTMLButtonElement;
+    const nextButton = document.querySelector('.next') as HTMLButtonElement;
+    
+    if (!carousel || !prevButton || !nextButton) return;
 
-      carousel.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        const container = target.closest('.thumbnail-container');
-        if (!container) return;
+    let scrollAmount = 0;
+    const step = carousel.clientWidth * 0.8; // Scroll 80% of visible width
 
-        const img = container.querySelector('img');
-        if (!img) return;
-
-        const videoId = img.dataset.videoId;
-        if (videoId) {
-          window.open(`https://youtube.com/shorts/${videoId}`, '_blank');
-        }
-      });
+    function updateNavButtons() {
+      prevButton.style.display = scrollAmount <= 0 ? 'none' : 'flex';
+      nextButton.style.display = 
+        scrollAmount >= carousel.scrollWidth - carousel.clientWidth 
+          ? 'none' 
+          : 'flex';
     }
 
-    document.addEventListener('DOMContentLoaded', initializeCarousel);
+    prevButton.addEventListener('click', () => {
+      scrollAmount = Math.max(0, scrollAmount - step);
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+      updateNavButtons();
+    });
+
+    nextButton.addEventListener('click', () => {
+      scrollAmount = Math.min(
+        carousel.scrollWidth - carousel.clientWidth,
+        scrollAmount + step
+      );
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+      updateNavButtons();
+    });
+
+    // Handle video clicks
+    carousel.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const container = target.closest('.thumbnail-container');
+      if (!container) return;
+
+      const img = container.querySelector('img');
+      if (!img) return;
+
+      const videoId = img.dataset.videoId;
+      if (videoId) {
+        window.open(`https://youtube.com/shorts/${videoId}`, '_blank');
+      }
+    });
+
+    // Initial button state
+    updateNavButtons();
+
+    // Update buttons on window resize
+    window.addEventListener('resize', updateNavButtons);
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeCarousel);
 </script>

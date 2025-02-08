@@ -1,78 +1,110 @@
-body {
-    width: 1000px;
-    background-color: silver;
-    color: black; ;
-    font-size: 1.2rem;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+/* Base styles */
+
+html {
+  scroll-padding-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+  scroll-behavior: smooth;
 }
 
+:root {
+  --max-width-desktop: 1000px;
+  --max-width-tablet: 768px;
+  --max-width-mobile: 100%;
+  --spacing-base: 1rem;
+  --font-size-base: 16px;
+  --color-background: silver;
+  --color-text: black;
+  --color-dimgrey: dimgrey;
+}
 
+body {
+  width: 100%;
+  max-width: var(--max-width-desktop);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  padding: 0 var(--spacing-base);
+  box-sizing: border-box;
+}
+
+/* Typography */
 h1 {
-    text-align: center;
-    font-size: 3rem;
-    color: dimgrey
-  }
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-dimgrey);
+}
 
 h2 {
-    text-align: left;
-    font-size: 2rem;
-  }
+  text-align: left;
+  font-size: 2rem;
+}
 
 h3 {
-    text-align: left;
-    font-size: 1.5rem;
-  }
-  
-.slider-section {
-    margin: 2rem 0;
-  }
-  
-.youtube-section {
-    margin: 2rem 0;
-  }
+  text-align: left;
+  font-size: 1.5rem;
+}
 
+/* Sections */
+.slider-section,
+.youtube-section {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+section {
+  padding-top: 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Quote styles */
 .quote-container {
   text-align: center;
   font-size: 1.2rem;
   font-style: italic;
-  color:dimgrey;
-  width: 60%;
-  margin: 0 auto;
-  margin-top: 20px;
+  color: var(--color-dimgrey);
+  width: 90%;
+  margin: 20px auto 0;
 }
 
 .quote-author {
   text-align: right;
   font-size: 1rem;
   font-style: italic;
-  color:dimgray;
-  width: 60%;
-  margin: 0 auto;
+  color: var(--color-dimgrey);
+  width: 90%;
+  margin: 0.5rem auto;
 }
 
+/* Author info */
 .author-info {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .author-name {
-  margin: 0 10px 0 0;
-  font-size: 1.1em; /* Adjust as needed */
-  margin-left: 10px;
+  margin: 0 0 0 10px;
+  font-size: 1.1em;
 }
 
+/* Text layouts */
 .texto-centrado {
-  text-align:justify;
-  margin-left: 20px;
-  margin-bottom: 40px;
+  text-align: justify;
+  margin: 0 auto 40px;
+  width: 90%;
 }
 
 .text-box-center {
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .aladerecha {
@@ -84,14 +116,14 @@ h3 {
   padding-bottom: 20px;
 }
 
+/* Content containers */
 .contenedor-texto {
-  justify-content: center;
-  align-items: center;
-  margin: 30px;
+  margin: 30px auto;
   padding-bottom: 30px;
+  width: 90%;
 }
 
-.contenedor-1  {
+.contenedor-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,9 +131,10 @@ h3 {
   padding: 10px;
 }
 
+/* Quotes */
 .quotes {
-  font-size: 18px; 
-  text-align:center;
+  font-size: 18px;
+  text-align: center;
   font-style: italic;
 }
 
@@ -111,10 +144,112 @@ h3 {
 }
 
 .author {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   font-style: italic;
   text-align: right;
-  font-size: 16px; 
+  font-size: 16px;
 }
 
+/* Map container */
+.contenedor-ubicacion {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contenedor-ubicacion iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  margin-top: 15px;
+}
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive iframe */
+iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 300px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .quote-container,
+  .quote-author,
+  .texto-centrado,
+  .text-box-center,
+  .contenedor-texto {
+    width: 95%;
+  }
+
+  .author-info {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 13px;
+    padding: 0 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .quote-container {
+    font-size: 1rem;
+  }
+
+  .quotes {
+    font-size: 16px;
+  }
+
+  .author {
+    font-size: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .youtube-section,
+  .slider-section,
+  iframe {
+    display: none;
+  }
+}

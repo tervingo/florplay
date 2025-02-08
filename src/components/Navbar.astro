@@ -11,7 +11,34 @@ const menuItems = [
 ---
 
 <nav class="navbar">
-    {menuItems.map(item => (
-        <a href={item.href} class="nav-item">{item.title}</a>
-    ))}
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+    </button>
+    
+    <div class="nav-links">
+        {menuItems.map(item => (
+            <a href={item.href} class="nav-item">{item.title}</a>
+        ))}
+    </div>
 </nav>
+
+<script>
+    // Add client-side JavaScript for mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks?.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn?.classList.remove('active');
+                navLinks?.classList.remove('active');
+            });
+        });
+    });
+</script>
