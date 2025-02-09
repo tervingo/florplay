@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Base styles */
 
 html {
@@ -163,6 +168,12 @@ section[id] {
   border: 0;
   margin-top: 15px;
 }
+
+.contenedor-video {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
 /* Images */
 img {
   max-width: 100%;
@@ -209,7 +220,7 @@ iframe {
 
 @media screen and (max-width: 480px) {
   body {
-    font-size: 13px;
+    font-size: 16px;
     padding: 0 0.5rem;
   }
 

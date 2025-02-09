@@ -93,7 +93,7 @@
 
 @media (max-width: 480px) {
   .thumbnail-container {
-    width: 120px; /* Aún más pequeñas en móviles */
+    width: 140px; /* Aún más pequeñas en móviles */
   }
 
   .nav-button {

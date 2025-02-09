@@ -4,6 +4,7 @@ import ImageSlider from '../components/ImageSlider.astro';
 import YouTubeCarousel from '../components/YouTubeCarousel.astro';
 import Navbar from '../components/Navbar.astro';
 import Modal from '../components/Modal.astro';
+import LazyVideo from '../components/LazyVideo.jsx';
 import '../styles/index.css';
 
 // Define el array de imágenes
@@ -14,28 +15,32 @@ const images = [
 
 const videos = [
   {
+    id: '_06uGxGkALY',
+    title: 'Digestión y temperatura del agua'
+  },  
+  {
     id: 'Gk-mXcxY8jw',
     title: 'Fascia plantar'
   },
   {
-	id: 'ZQzQP06n_hw',
-	title: 'Memoria autobiográfica'
-  },
-  {
-	id: 'YeSM_GWrblA',
-	title: 'Funciones ejecutivas'
-  },
-  {
-    id: '_06uGxGkALY',
-    title: 'Digestión'
-  },
-  {
     id:'59BbTY5VDPc',
-    title: 'Gratitud'
+    title: 'Vivir en gratitud'
   },
   {
-    id: 'sF03wvyFwYY',
-    title: 'Inflamación y estrés'
+	id: 'D_kWz2R5Lrk',
+	title: 'Emoción y lenguaje'
+  },
+  {
+	id: '_L_-Y7aRAQ4',
+	title: 'Lateralidad y lenguaje'
+  },
+  {
+    id: 'sebZhyx2EjM',
+    title: 'Diafragma pélvico'
+  },
+  {
+    id: 'oyyZ1g8BPK0',
+    title: 'Diastasis abdominal'
   }
 
   // Añade aquí más videos con sus IDs y títulos
@@ -139,16 +144,13 @@ const videos = [
       <i>«Zeitgeist»</i> sobre el cuerpo humano.
       </div>
 
-      <div class="contenedor-1">
-          <div class="centered">
-            <img 
-              src="/florplay/images/TS.jpg"
-              alt="Slider image"
-              width="220px"
-              height="300px"
-            />
-          </div>
-      </div>
+
+      <div class="contenedor-video">
+        <LazyVideo 
+        src="/florplay/nuez-y-cerebro.mov" 
+        client:load
+      />
+      </div> 
      
       <div class="centered">
         <Modal id="ATS" trigger="saber más">
@@ -159,24 +161,29 @@ const videos = [
             <div class="author">Andrew Taylor Still</div>
           </div>
           <div slot="contenido-popup">
+            <div class="contenedor-1">
+              <div class="centered">
+                <img 
+                  src="/florplay/images/TS.jpg"
+                  alt="Slider image"
+                  width="220px"
+                  height="300px"
+                />
+              </div>
+          </div>
             <p>Andrew Taylor Still (1828 - 1917), médico estadounidense considerado el padre de la Osteopatía, fue quien sentó los principios de las Leyes Osteopáticas basadas en la Naturaleza y aplicadas al ser humano y que gobiernan los mecanismos que reconducen al propio organismo en dirección al restablecimiento del equilibrio y su salud.
             </p>
           </div>
         </Modal>
       </div>
 
-
-      <div class="contenedor-1">
-        <div class="centered">
-          <img 
-            src="/florplay/images/RyC.jpg"
-            alt="Slider image"
-            width="220px"
-            height="300px"
-          />
-        </div>
-    </div>
-
+      <div class="contenedor-video">
+        <LazyVideo 
+        src="/florplay/sol-y-sinapsis.mov" 
+        client:load
+      />
+      </div>
+      
     <div class="centered">
     <Modal id="SRC" trigger="saber más">
       <div slot="texto-principal">
@@ -186,11 +193,22 @@ const videos = [
         <div class="author">Santiago Ramón y Cajal</div>
       </div>
       <div slot="contenido-popup">
-        <p>Santiago Ramón y Cajal (1852 - 1934) fue un médico y científico español considerado el padre de la Neurociencia y apasionado por el estudio de la Histología y Anatomía de la estructura del sistema nervioso. Pionero en la descripción de la célula nerviosa o neurona, con uno de sus aportes fundamentales denominado «Doctrina Neuronal» basado en que el cerebro está compuesto por neuronas individuales y a la vez sumamente interconectadas entre sí, creando innumerables circuitos neuronales y que en la actualidad siguen siendo una fuente inagotable de conocimiento de la Neurociencia Moderna.
+        <div class="contenedor-1">
+          <div class="centered">
+            <img 
+              src="/florplay/images/RyC.jpg"
+              alt="Slider image"
+              width="220px"
+              height="300px"
+            />
+          </div>
+        </div>
+          <p>Santiago Ramón y Cajal (1852 - 1934) fue un médico y científico español considerado el padre de la Neurociencia y apasionado por el estudio de la Histología y Anatomía de la estructura del sistema nervioso. Pionero en la descripción de la célula nerviosa o neurona, con uno de sus aportes fundamentales denominado «Doctrina Neuronal» basado en que el cerebro está compuesto por neuronas individuales y a la vez sumamente interconectadas entre sí, creando innumerables circuitos neuronales y que en la actualidad siguen siendo una fuente inagotable de conocimiento de la Neurociencia Moderna.
         </p>
       </div>
     </Modal>
     </div>
+
 
 <div class="centered">
   <h3>La Osteopatia y la Neurociencia se integran</h3>
