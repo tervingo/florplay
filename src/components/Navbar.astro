@@ -1,29 +1,36 @@
 ---
 import '../styles/navbar.css';
+import { t } from '../i18n/translate';
+import LanguageSelector from './LanguageSelector.astro';
+const pathname = Astro.url.pathname;
 
 const menuItems = [
-    { title: 'Inicio', href: '#inicio' },
-    { title: 'Trayectoria', href: '#trayectoria' },
-    { title: 'Propósito', href: '#proposito' },
-    { title: 'Proyecto', href: '#proyecto' },
-    { title: 'Ubicación', href: '#ubicacion' }
+    { title: t('nav.inicio', pathname), href: '#inicio' },
+    { title: t('nav.trayectoria', pathname), href: '#trayectoria' },
+    { title: t('nav.proposito', pathname), href: '#proposito' },
+    { title: t('nav.proyecto', pathname), href: '#proyecto' },
+    { title: t('nav.ubicacion', pathname), href: '#ubicacion' }
 ];
 ---
 
-<nav class="navbar">
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span class="hamburger"></span>
-    </button>
-    
-    <div class="nav-links">
-        {menuItems.map(item => (
-            <a href={item.href} class="nav-item">{item.title}</a>
-        ))}
+<div class="navbar-container">
+    <nav class="navbar">
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+        </button>
+        
+        <div class="nav-links">
+            {menuItems.map(item => (
+                <a href={item.href} class="nav-item">{item.title}</a>
+            ))}
+        </div>
+    </nav>
+    <div class="language-selector-container">
+        <LanguageSelector />
     </div>
-</nav>
+</div>
 
 <script>
-    // Add client-side JavaScript for mobile menu toggle
     document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
@@ -33,7 +40,6 @@ const menuItems = [
             navLinks?.classList.toggle('active');
         });
 
-        // Close menu when clicking on a link
         document.querySelectorAll('.nav-item').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn?.classList.remove('active');

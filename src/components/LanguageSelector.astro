@@ -1,0 +1,48 @@
+---
+import { getLanguageFromURL, translatePath } from '../i18n/utils';
+
+const pathname = Astro.url.pathname;
+const currentLang = getLanguageFromURL(pathname);
+---
+
+<div class="language-switcher">
+  {currentLang === 'es' ? (
+    <a 
+      href={translatePath(pathname, 'en')}
+      class="lang-link"
+    >
+      English
+    </a>
+  ) : (
+    <a 
+      href={translatePath(pathname, 'es')}
+      class="lang-link"
+    >
+      Español
+    </a>
+  )}
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    gap: 3rem;
+    padding: 0;
+  }
+  .lang-link {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: royalblue;
+  }
+  .lang-link:hover {
+    background-color: #f5f5f5;
+    color: #000;
+  }
+
+  @media (max-width: 768px) {
+    .language-switcher {
+      margin-left: auto;
+    }
+  }
+</style>
