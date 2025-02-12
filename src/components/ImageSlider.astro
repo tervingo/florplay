@@ -5,15 +5,22 @@ interface Props {
   images: string[];
   width?: string;
   height?: string;
+  sliderId?: string; // Nuevo prop para el ID único
 }
 
-const { images, width = "350px", height = "500px" } = Astro.props;
+const { 
+  images, 
+  width = "350px", 
+  height = "500px",
+  sliderId = crypto.randomUUID() // Generamos un ID único si no se proporciona uno
+} = Astro.props;
 ---
 
 <div class="slider-container">
-  <div id="imageSlider"
+  <div 
     class="slider"
-    data-images={JSON.stringify(images)}>
+    data-images={JSON.stringify(images)}
+    data-slider-id={sliderId}>
     <img 
       src={images[0]} 
       alt="Slider image"
@@ -24,11 +31,11 @@ const { images, width = "350px", height = "500px" } = Astro.props;
 </div>
 
 <script>
-  function initializeSlider() {
-    const slider = document.getElementById('imageSlider');
+  function initializeSlider(sliderId: string) {
+    const slider = document.querySelector(`[data-slider-id="${sliderId}"]`);
     if (!slider) return;
 
-    const images = JSON.parse(slider.dataset.images || '[]');
+    const images = JSON.parse(slider.getAttribute('data-images') || '[]');
     let currentImage = 0;
     const imgElement = slider.querySelector('img');
 
@@ -45,6 +52,10 @@ const { images, width = "350px", height = "500px" } = Astro.props;
     }, 4000);
   }
 
-  // Inicializar el slider cuando el documento esté listo
-  document.addEventListener('DOMContentLoaded', initializeSlider);
+  // Inicializar todos los sliders cuando el documento esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-slider-id]').forEach(slider => {
+      initializeSlider(slider.getAttribute('data-slider-id') || '');
+    });
+  });
 </script>

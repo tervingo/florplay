@@ -51,6 +51,13 @@ export interface Translation {
     titulo: string;
     proytext1: string;
     proytext2: string;
+    vid1: string;
+    vid2: string;
+    vid3: string;
+    vid4: string;
+    vid5: string;
+    vid6: string;
+    vid7: string;
   };
   ubicacion:
   {

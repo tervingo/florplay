@@ -29,7 +29,7 @@ proposito: {
     enfoquehead: 'Enfoque terapéutico',
     enfoquesubhead: 'Osteopatía y Neurociencia Integrativa',
     enfoquetext: 'La palabra «Zeitgeist» es una expresión del idioma alemán que significa “el espíritu del tiempo” y se refiere a un conjunto general de ideas, creencias o sensaciones que son comunes en un periodo particular de la historia. He aquí dos pioneros de la misma época, separados por un océano y a la vez reunidos por la misma visión o «Zeitgeist» sobre el cuerpo humano.',
-    sabermas: 'saber más',
+    sabermas: 'Saber más',
     stillquote: 'La mente y el cuerpo están conectados y, por lo tanto, no se puede curar uno sin tener en cuenta al otro',
     stillpopup: 'Andrew Taylor Still (1828 - 1917), médico estadounidense considerado el padre de la Osteopatía, fue quien sentó los principios de las Leyes Osteopáticas basadas en la Naturaleza y aplicadas al ser humano y que gobiernan los mecanismos que reconducen al propio organismo en dirección al restablecimiento del equilibrio y su salud.',
     cajalquote: 'Mientras nuestro cerebro sea un misterio, el Universo, reflejo de la estructura del cerebro, también lo será',
@@ -51,6 +51,13 @@ proyecto: {
     titulo: 'Proyecto comunitario',
     proytext1: 'Flor de Anatomía tiene el objetivo de compartir libremente el conocimiento académico y divulgación científica sobre el cuerpo humano de forma integrativa y dinámica, añadiendo conceptos de aplicabilidad clínica que puedan ser útiles en la autocomprensión de nuestra salud.',
     proytext2: '¡Te espero! Para que juntos descubramos una nueva forma de entender el cuerpo humano y su salud.',
+    vid1: 'Digestión y temperatura del agua',
+    vid2: 'Los siete diafragmas',
+    vid3: 'Vivir en gratitud',
+    vid4: 'Emoción y lenguaje',
+    vid5: 'Lateralidad y lenguaje',
+    vid6: 'Diafragma pélvico',
+    vid7: 'Diástasis abdominal',
     },
 ubicacion:
     {

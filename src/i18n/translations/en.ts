@@ -29,7 +29,7 @@ const translations: Translation = {
     enfoquehead: 'Therapeutic approach',
     enfoquesubhead: 'Osteopathy and Integrative Neuroscience',
     enfoquetext: 'The word «Zeitgeist» is an expression of the German language that means “the spirit of the time” and refers to a general set of ideas, beliefs or sensations that are common in a particular period of history. Here are two pioneers of the same era, separated by an ocean and yet united by the same vision or «Zeitgeist» about the human body.',
-    sabermas: 'read more',
+    sabermas: 'Read more',
     stillquote: 'Mind and body are connected and, therefore, one cannot be healed without taking the other into account',
     stillpopup: 'Andrew Taylor Still (1828 - 1917), an American physician considered the father of Osteopathy, was the one who laid down the principles of the Osteopathic Laws based on Nature and applied to the human being and that govern the mechanisms that redirect the organism itself towards the restoration of balance and health.',
     cajalquote: 'As long as our brain is a mystery, the Universe, reflecting the structure of the brain, will also be a mystery.',
@@ -51,6 +51,13 @@ const translations: Translation = {
     titulo: 'Community project',
     proytext1: 'Flor de Anatomía aims to freely share academic knowledge and scientific dissemination about the human body in an integrative and dynamic way. in an integrative and dynamic way, adding concepts of clinical applicability that can be useful in the self-understanding of our health.',
     proytext2: 'I´m waiting for you! So that together we can discover a new way of understanding the human body and its health.',
+    vid1: 'Digestion and water temperature',
+    vid2: 'The seven diaphragms',
+    vid3: 'Living in gratitude',
+    vid4: 'Emotion and language', 
+    vid5: 'Laterality and language', 
+    vid6: 'Pelvic Diaphragm',
+    vid7: 'Abdominal diastasis',
    },
    ubicacion:
    {

@@ -19,39 +19,45 @@ export function getStaticPaths() {
 }
 
 // Define el array de imágenes
-const images = [
+const manos = [
   '/florplay/images/menis.jpg',
   '/florplay/images/manos.jpg',
+];
+
+const logos = [
+  '/florplay/images/logo_trans.png',
+  '/florplay/images/logo_gris.jpg',
+  '/florplay/images/logo.jpg',
 ];
 
 const videos = [
   {
     id: '_06uGxGkALY',
-    title: 'Digestión y temperatura del agua'
+    title: t('proyecto.vid1', pathname)
   },  
   {
     id: 'Gk-mXcxY8jw',
-    title: 'Fascia plantar'
+    title: t('proyecto.vid2', pathname)
   },
   {
     id:'59BbTY5VDPc',
-    title: 'Vivir en gratitud'
+    title: t('proyecto.vid3', pathname)
   },
   {
 	id: 'D_kWz2R5Lrk',
-	title: 'Emoción y lenguaje'
+	title: t('proyecto.vid4', pathname)
   },
   {
 	id: '_L_-Y7aRAQ4',
-	title: 'Lateralidad y lenguaje'
+	title: t('proyecto.vid5', pathname)
   },
   {
     id: 'sebZhyx2EjM',
-    title: 'Diafragma pélvico'
+    title: t('proyecto.vid6', pathname)
   },
   {
     id: 'oyyZ1g8BPK0',
-    title: 'Diastasis abdominal'
+    title: t('proyecto.vid7', pathname)
   }
 
   // Añade aquí más videos con sus IDs y títulos
@@ -258,7 +264,7 @@ const videos = [
 
     <div class="slider-section">
         <ImageSlider 
-          images={images} 
+          images={manos} 
           width="350px" 
           height="500px" 
         />
@@ -271,18 +277,17 @@ const videos = [
   </div>
   </section>
 
-  
+
   <section id="proyecto">
 
     <h2>{t('proyecto.titulo', pathname)}</h2>
 
-    <div class="centered">
-      <img 
-      src="/florplay/images/logo.jpg"
-      alt="Buho"
-      width="400px"
-      height="455px"
-    />
+    <div class="slider-section">
+        <ImageSlider 
+          images={logos} 
+          width="400px" 
+          height="455px" 
+        />
     </div>
 
     <div class="text-box-center">
