@@ -64,6 +64,31 @@ export interface Translation {
     titulo: string;
     transporte: string;
   };
+  cookies: {
+    mensaje: string;
+    aceptar: string;
+    rechazar: string;
+    politica: string;
+    titulo: string;
+    quesonhead: string;
+    quesontext: string;
+    tiposhead: string;
+    necesarias: string;
+    necesariastext: string;
+    preferencias: string;
+    preferenciastext: string;
+    estadisticas: string;
+    estadisticastext: string;
+    marketing: string;
+    marketingtext: string;
+    gestionhead: string;
+    gestiontext: string;
+    actualizacioneshead: string;
+    actualizacionestext: string;
+    analiticas: string;
+    analiticastext: string;
+
+  }
 }
 
 export interface Translations {

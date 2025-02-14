@@ -8,7 +8,7 @@ export default defineConfig({
     tailwind(), 
     react(),
   ],
-  base: '/florplay',
+  base: '/',
   build: {
     assets: 'assets'
   },
@@ -16,7 +16,7 @@ export default defineConfig({
     server: {
       fs: {
         allow: [
-          'C:/Users/j4alo/Dropbox/Eltomalturta/florplay'
+          'C:/Users/j4alo/Dropbox/Eltomalturta/'
         ]
       }
     }

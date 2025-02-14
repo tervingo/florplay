@@ -1,0 +1,84 @@
+---
+// pages/cookies.astro
+import Layout from '../layouts/Layout.astro';
+import { t } from '../i18n/translate';
+
+const pathname = Astro.url.pathname;
+---
+
+<Layout title="Política de Cookies">
+  <main class="container">
+    <h1>{t('cookies.titulo', pathname)}</h1>
+    
+    <section>
+      <h2>{t('cookies.quesonhead', pathname)}</h2>
+      <p>{t('cookies.quesontext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('cookies.tiposhead', pathname)}</h2>
+      <ul>
+        <li>
+          <strong>{t('cookies.necesarias', pathname)}</strong>
+          <p>{t('cookies.necesariastext', pathname)}</p>
+        </li>
+        <li>
+          <strong>{t('cookies.preferencias', pathname)}</strong>
+          <p>{t('cookies.preferenciastext', pathname)}</p>
+        </li>
+        <li>
+          <strong>{t('cookies.estadisticas', pathname)}</strong>
+          <p>{t('cookies.estadististicastext', pathname)}</p>
+        </li>
+        <li>
+          <strong>{t('cookies.marketing', pathname)}</strong>
+          <p>{t('cookies.marketingtext', pathname)}</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t('cookies.gestionhead', pathname)}</h2>
+      <p>{t('cookies.gestiontext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('cookies.actualizacioneshead', pathname)}</h2>
+      <p>{t('cookies.actualizacionestext', pathname)}</p>
+    </section>
+
+    <section>
+        <h2>{t('cookies.analiticas', pathname)}</h2>
+        <p>{t('cookies.analiticastext', pathname)}</p>
+      </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+</style>

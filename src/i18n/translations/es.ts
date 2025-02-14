@@ -64,7 +64,31 @@ ubicacion:
       titulo: 'Ubicación',
       transporte: 'Transporte Público',
     },
-
+cookies: 
+    {
+      mensaje: "Utilizamos cookies para mejorar tu experiencia en nuestra web. Al continuar navegando, aceptas nuestra Política de Cookies.",
+      aceptar: "Aceptar",
+      rechazar: "Rechazar",
+      politica: "Política de Cookies",
+      titulo: "Política de Cookies",
+      quesonhead: "¿Qué son las cookies?",
+      quesontext: "Las cookies son pequeños archivos de texto que los sitios web colocan en tu dispositivo para almacenar información sobre tus preferencias.",
+      tiposhead: "Tipos de cookies que utilizamos",
+      necesarias: "Cookies necesarias",
+      necesariastext: "Son esenciales para el funcionamiento básico del sitio web.",
+      preferencias: "Cookies de preferencias",
+      preferenciastext: "Permiten recordar información que cambia el comportamiento o el aspecto del sitio.",
+      estadisticas: "Cookies estadísticas",
+      estadisticastext: "Nos ayudan a entender cómo los visitantes interactúan con el sitio web.",
+      marketing: "Cookies de marketing",
+      marketingtext: "Se utilizan para rastrear a los visitantes en los sitios web.",
+      gestionhead: "Cómo gestionar las cookies",
+      gestiontext: "Puedes modificar tus preferencias de cookies en cualquier momento desde la configuración de tu navegador.",
+      actualizacioneshead: "Actualizaciones de la política",
+      actualizacionestext: "Esta política puede actualizarse ocasionalmente. Te recomendamos revisarla periódicamente.",
+      analiticas: "Google Analytics",
+      analiticastext: "Utilizamos Google Analytics para analizar el uso del sitio web y mejorar nuestros servicios. Estos datos son anónimos y no incluyen información personal.",
+    }
 };
 
 export default translations;

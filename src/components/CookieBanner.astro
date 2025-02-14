@@ -1,0 +1,119 @@
+---
+// CookieBanner.astro
+import { t } from '../i18n/translate';
+const pathname = Astro.url.pathname;
+---
+
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>{t('cookies.mensaje', pathname)}</p>
+    <div class="cookie-buttons">
+      <button id="acceptCookies" class="cookie-button accept">
+        {t('cookies.aceptar', pathname)}
+      </button>
+      <button id="rejectCookies" class="cookie-button reject">
+        {t('cookies.rechazar', pathname)}
+      </button>
+      <a href="/cookies" class="cookie-link">
+        {t('cookies.politica', pathname)}
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 1rem;
+    z-index: 1000;
+    display: none;
+  }
+
+  .cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .cookie-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .accept {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .reject {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .cookie-link {
+    color: #2196F3;
+    text-decoration: none;
+  }
+
+  .cookie-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-content {
+      text-align: center;
+    }
+
+    .cookie-buttons {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  function initCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptButton = document.getElementById('acceptCookies');
+    const rejectButton = document.getElementById('rejectCookies');
+
+    // Comprobar si ya existe una decisión sobre las cookies
+    const cookieConsent = localStorage.getItem('cookieConsent');
+
+    if (!cookieConsent) {
+      cookieBanner?.style.setProperty('display', 'block');
+    }
+
+    acceptButton?.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner?.style.setProperty('display', 'none');
+      // Disparar evento para cargar GA
+      window.dispatchEvent(new Event('cookieConsentChanged'));
+    });
+
+    rejectButton?.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'rejected');
+      cookieBanner?.style.setProperty('display', 'none');
+      // Eliminar cookies de GA si existen
+      document.cookie = '_ga=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = '_ga_G-D3EEJ9B3NT=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initCookieBanner);
+</script>

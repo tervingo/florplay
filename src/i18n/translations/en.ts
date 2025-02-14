@@ -49,7 +49,7 @@ const translations: Translation = {
    },
    proyecto: {
     titulo: 'Community project',
-    proytext1: 'Flor de Anatomía aims to freely share academic knowledge and scientific dissemination about the human body in an integrative and dynamic way. in an integrative and dynamic way, adding concepts of clinical applicability that can be useful in the self-understanding of our health.',
+    proytext1: 'Flor de Anatomía aims to freely share academic knowledge and scientific dissemination about the human body in an integrative and dynamic way, adding concepts of clinical applicability that can be useful in the self-understanding of our health.',
     proytext2: 'I´m waiting for you! So that together we can discover a new way of understanding the human body and its health.',
     vid1: 'Digestion and water temperature',
     vid2: 'The seven diaphragms',
@@ -64,6 +64,31 @@ const translations: Translation = {
      titulo: 'Location',
      transporte: 'Public Transport',
    },
+   cookies: 
+   {
+     mensaje: 'We use cookies to improve your experience on our website. By continuing to browse the site, you are agreeing to our Cookie Policy',
+     aceptar: 'Accept',
+     rechazar: 'Reject',
+     politica: 'Cookie Policy',
+     titulo: 'Cookie Policy',
+     quesonhead: 'What are cookies?',
+     quesontext: 'Cookies are small text files that websites place on your device to store information about your preferences.', 
+     tiposhead: 'Types of cookies we use',
+     necesarias: 'Necessary cookies',
+     necesariastext: 'These are essential for the basic operation of the website', 
+     preferencias: 'Preference cookies',
+     preferenciastext: 'They allow us to remember information that changes the way the site behaves or looks',
+     estadisticas: 'Statistics cookies',
+     estadisticastext: 'They help us to understand how visitors interact with the website',
+     marketing: 'Marketing cookies',
+     marketingtext: 'Used to track visitors to websites', 
+     gestionhead: 'How to manage cookies',
+     gestiontext: 'You can change your cookie preferences at any time from your browser settings', 
+     actualizacioneshead: 'Policy updates',
+     actualizacionestext: 'This policy may be updated from time to time. We recommend that you review it periodically.',
+     analiticas: "Google Analytics",
+     analiticastext: "We use Google Analytics to analyse the use of the website and to improve our services. This data is anonymous and does not include personal information.",
+   }
 };
 
 export default translations;

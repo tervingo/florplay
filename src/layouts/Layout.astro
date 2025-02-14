@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -16,10 +17,45 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Google Analytics - Se cargará condicionalmente -->
+    <script id="ga-script" type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D3EEJ9B3NT');
+    </script>
   </head>
   
   <body>
     <slot />  <!-- Aquí se insertará el contenido de las páginas -->
     <Footer/>
+    <CookieBanner />
+
+    <!-- Script para manejar la carga condicional de GA -->
+    <script>
+      function loadGoogleAnalytics() {
+        const consent = localStorage.getItem('cookieConsent');
+        if (consent === 'accepted') {
+          // Crear y cargar el script de GA
+          const gaScript = document.createElement('script');
+          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D3EEJ9B3NT';
+          gaScript.async = true;
+          document.head.appendChild(gaScript);
+    
+          // Activar el script inline de GA
+          const inlineScript = document.getElementById('ga-script') as HTMLScriptElement;
+          if (inlineScript) {
+            inlineScript.type = 'text/javascript';
+          }
+        }
+      }
+    
+      // Cargar GA al inicio si ya hay consentimiento
+      document.addEventListener('DOMContentLoaded', loadGoogleAnalytics);
+    
+      // Escuchar cambios en el consentimiento
+      window.addEventListener('cookieConsentChanged', loadGoogleAnalytics);
+    </script>
   </body>
 </html>
