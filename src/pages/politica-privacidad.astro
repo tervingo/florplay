@@ -1,0 +1,119 @@
+---
+// pages/politica-privacidad.astro
+import Layout from '../layouts/Layout.astro';
+import { t } from '../i18n/translate';
+
+const pathname = Astro.url.pathname;
+---
+
+<Layout title="Política de Privacidad">
+  <main class="container">
+    <h1>{t('politicaprivacidad.titulo', pathname)}</h1>
+    
+    <section>
+      <h2>{t('politicaprivacidad.responsablehead', pathname)}</h2>
+      <p><strong>Responsable del tratamiento:</strong> María Florencia Vidal</p>
+      <p><strong>Email de contacto:</strong> flordeanatomia@gmail.com</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.finalidadeshead', pathname)}</h2>
+      <p>{t('politicaprivacidad.finalidadestext', pathname)}</p>
+      <ul>
+        <li>{t('politicaprivacidad.finalidad1', pathname)}</li>
+        <li>{t('politicaprivacidad.finalidad2', pathname)}</li>
+        <li>{t('politicaprivacidad.finalidad3', pathname)}</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.legitimacionhead', pathname)}</h2>
+      <p>{t('politicaprivacidad.legitimaciontext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.destinatarioshead', pathname)}</h2>
+      <p>{t('politicaprivacidad.destinatariostext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.conservacionhead', pathname)}</h2>
+      <p>{t('politicaprivacidad.conservaciontext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.derechosusuariohead', pathname)}</h2>
+      <p>{t('politicaprivacidad.derechosusuariotext', pathname)}</p>
+      <ul>
+        <li><strong>{t('politicaprivacidad.derecho1', pathname)}:</strong> {t('politicaprivacidad.derecho1text', pathname)}</li>
+        <li><strong>{t('politicaprivacidad.derecho2', pathname)}:</strong> {t('politicaprivacidad.derecho2text', pathname)}</li>
+        <li><strong>{t('politicaprivacidad.derecho3', pathname)}:</strong> {t('politicaprivacidad.derecho3text', pathname)}</li>
+        <li><strong>{t('politicaprivacidad.derecho4', pathname)}:</strong> {t('politicaprivacidad.derecho4text', pathname)}</li>
+        <li><strong>{t('politicaprivacidad.derecho5', pathname)}:</strong> {t('politicaprivacidad.derecho5text', pathname)}</li>
+        <li><strong>{t('politicaprivacidad.derecho6', pathname)}:</strong> {t('politicaprivacidad.derecho6text', pathname)}</li>
+      </ul>
+      <p>{t('politicaprivacidad.ejercicioderechos', pathname)} <a href="mailto:flordeanatomia@gmail.com">flordeanatomia@gmail.com</a></p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.cookieshead', pathname)}</h2>
+      <p>{t('politicaprivacidad.cookiestext', pathname)} <a href="/cookies">{t('politicaprivacidad.cookieslink', pathname)}</a>.</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.analiticashead', pathname)}</h2>
+      <p>{t('politicaprivacidad.analiticastext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.modificacioneshead', pathname)}</h2>
+      <p>{t('politicaprivacidad.modificacionestext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('politicaprivacidad.contactohead', pathname)}</h2>
+      <p>{t('politicaprivacidad.contactotext', pathname)} <a href="mailto:flordeanatomia@gmail.com">flordeanatomia@gmail.com</a></p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

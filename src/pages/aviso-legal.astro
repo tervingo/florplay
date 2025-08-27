@@ -1,0 +1,90 @@
+---
+// pages/aviso-legal.astro
+import Layout from '../layouts/Layout.astro';
+import { t } from '../i18n/translate';
+
+const pathname = Astro.url.pathname;
+---
+
+<Layout title="Aviso Legal">
+  <main class="container">
+    <h1>{t('avisolegal.titulo', pathname)}</h1>
+    
+    <section>
+      <h2>{t('avisolegal.identificacionhead', pathname)}</h2>
+      <p><strong>Titular del sitio web:</strong> María Florencia Vidal</p>
+      <p><strong>Email:</strong> flordeanatomia@gmail.com</p>
+      <p><strong>Actividad:</strong> {t('avisolegal.actividad', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.objetohead', pathname)}</h2>
+      <p>{t('avisolegal.objetotext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.condicioneshead', pathname)}</h2>
+      <p>{t('avisolegal.condicionestext1', pathname)}</p>
+      <p>{t('avisolegal.condicionestext2', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.responsabilidadhead', pathname)}</h2>
+      <p>{t('avisolegal.responsabilidadtext1', pathname)}</p>
+      <p>{t('avisolegal.responsabilidadtext2', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.propiedadhead', pathname)}</h2>
+      <p>{t('avisolegal.propiedadtext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.protecciondatoshead', pathname)}</h2>
+      <p>{t('avisolegal.protecciondatostext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.legislacionhead', pathname)}</h2>
+      <p>{t('avisolegal.legislaciontext', pathname)}</p>
+    </section>
+
+    <section>
+      <h2>{t('avisolegal.contactohead', pathname)}</h2>
+      <p>{t('avisolegal.contactotext', pathname)} <a href="mailto:flordeanatomia@gmail.com">flordeanatomia@gmail.com</a></p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

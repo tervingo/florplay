@@ -49,6 +49,13 @@ import { Mail, MessageCircle,  Facebook, Instagram, Youtube } from 'lucide-react
         <Youtube size={24} />
       </a>
     </div>
+    <div class="legal-links">
+      <a href="/cookies" class="legal-link">Política de Cookies</a>
+      <span class="separator">|</span>
+      <a href="/politica-privacidad" class="legal-link">Política de Privacidad</a>
+      <span class="separator">|</span>
+      <a href="/aviso-legal" class="legal-link">Aviso Legal</a>
+    </div>
     <p class="copyright">&copy; 2025 Flor de Anatomía</p>
   </div>
 </footer>
@@ -81,6 +88,31 @@ import { Mail, MessageCircle,  Facebook, Instagram, Youtube } from 'lucide-react
 
   .social-link:hover {
     color: #000;
+  }
+
+  .legal-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .legal-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+  }
+
+  .legal-link:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .separator {
+    color: #666;
+    font-size: 0.8rem;
   }
 
   .copyright {
