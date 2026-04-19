@@ -8,7 +8,7 @@ export default defineConfig({
     tailwind(), 
     react(),
   ],
-  base: '/servicios',
+  base: '/',
   build: {
     assets: 'assets'
   },
