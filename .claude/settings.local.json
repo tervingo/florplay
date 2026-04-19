@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\j4alo\\Dropbox\\Eltomalturta\\florplay\\src\\pages\\[...lang]"
+    ]
+  }
+}

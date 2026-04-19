@@ -8,8 +8,6 @@ import LazyVideo from '../../components/LazyVideo.jsx';
 import AnatomiaForm from '../../components/AnatomiaForm.jsx';
 import ConsultoriaForm from '../../components/ConsultoriaForm.jsx';
 import AsesoramientoForm from '../../components/AsesoramientoForm.jsx';
-import TalleresForm from '../../components/TalleresForm.jsx';
-import ParticipacionForm from '../../components/ParticipacionForm.jsx';
 import FormModal from '../../components/FormModal.astro';
 import '../../styles/index.css';
 import { t } from '../../i18n/translate';
@@ -337,7 +335,6 @@ const videos = [
                 enviar: t('servicios.formEnviar', pathname),
                 enviando: t('servicios.formEnviando', pathname),
                 cancelar: t('servicios.formCancelar', pathname),
-                cerrar: t('servicios.formCerrar', pathname),
                 exito: t('servicios.formExito', pathname),
                 error: t('servicios.formError', pathname),
               }}
@@ -372,7 +369,6 @@ const videos = [
                 enviar: t('servicios.formEnviar', pathname),
                 enviando: t('servicios.formEnviando', pathname),
                 cancelar: t('servicios.formCancelar', pathname),
-                cerrar: t('servicios.formCerrar', pathname),
                 exito: t('servicios.formExito', pathname),
                 error: t('servicios.formError', pathname),
               }}
@@ -406,7 +402,6 @@ const videos = [
                 enviar: t('servicios.formEnviar', pathname),
                 enviando: t('servicios.formEnviando', pathname),
                 cancelar: t('servicios.formCancelar', pathname),
-                cerrar: t('servicios.formCerrar', pathname),
                 exito: t('servicios.formExito', pathname),
                 error: t('servicios.formError', pathname),
               }}
@@ -417,70 +412,6 @@ const videos = [
 
       <section id="talleres">
         <h3>{t('servicios.talleres', pathname)}</h3>
-        <div class="contenedor-texto">
-          <p>{t('servicios.tallerestext1', pathname)}</p>
-          <p>{t('servicios.tallerestext2', pathname)}</p>
-        </div>
-        <div class="contenedor-texto">
-          <FormModal
-            id="form-talleres"
-            before={t('servicios.talleresformtext', pathname)}
-            linkText={t('servicios.formLinkText', pathname)}
-            after={t('servicios.formLinkSuffix', pathname)}
-          >
-            <TalleresForm
-              client:load
-              modalId="form-talleres"
-              labels={{
-                nombre: t('servicios.formNombre', pathname),
-                pais: t('servicios.formPais', pathname),
-                paisPlaceholder: t('servicios.formPaisPlaceholder', pathname),
-                email: t('servicios.formEmail', pathname),
-                profesion: t('servicios.formProfesion', pathname),
-                motivo: t('servicios.formMotivoTaller', pathname),
-                enviar: t('servicios.formEnviar', pathname),
-                enviando: t('servicios.formEnviando', pathname),
-                cancelar: t('servicios.formCancelar', pathname),
-                cerrar: t('servicios.formCerrar', pathname),
-                exito: t('servicios.formExito', pathname),
-                error: t('servicios.formError', pathname),
-              }}
-            />
-          </FormModal>
-        </div>
-      </section>
-      <section id="participacion">
-        <h3>{t('servicios.participacion', pathname)}</h3>
-        <div class="contenedor-texto">
-          <p>{t('servicios.participaciontext', pathname)}</p>
-        </div>
-        <div class="contenedor-texto">
-          <FormModal
-            id="form-participacion"
-            before={t('servicios.participacionformtext', pathname)}
-            linkText={t('servicios.formLinkText', pathname)}
-            after={t('servicios.formLinkSuffix', pathname)}
-          >
-            <ParticipacionForm
-              client:load
-              modalId="form-participacion"
-              labels={{
-                nombre: t('servicios.formNombre', pathname),
-                pais: t('servicios.formPais', pathname),
-                paisPlaceholder: t('servicios.formPaisPlaceholder', pathname),
-                email: t('servicios.formEmail', pathname),
-                profesion: t('servicios.formProfesionDedicacion', pathname),
-                motivo: t('servicios.formMotivoParticipacion', pathname),
-                enviar: t('servicios.formEnviar', pathname),
-                enviando: t('servicios.formEnviando', pathname),
-                cancelar: t('servicios.formCancelar', pathname),
-                cerrar: t('servicios.formCerrar', pathname),
-                exito: t('servicios.formExito', pathname),
-                error: t('servicios.formError', pathname),
-              }}
-            />
-          </FormModal>
-        </div>
       </section>
     </section>
 

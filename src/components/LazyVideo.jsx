@@ -69,7 +69,7 @@ export default function LazyVideo({ src }) {
   return (
     <div 
       ref={containerRef}
-      class="container-ref"
+      className="container-ref"
     >
       <video 
         ref={videoRef}

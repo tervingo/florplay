@@ -8,11 +8,12 @@ export default defineConfig({
     tailwind(), 
     react(),
   ],
-  base: '/',
+  base: '/servicios',
   build: {
     assets: 'assets'
   },
   vite: {
+    cacheDir: 'C:/Users/j4alo/.vite-cache/florplay',
     server: {
       fs: {
         allow: [

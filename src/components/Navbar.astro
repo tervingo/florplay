@@ -11,6 +11,14 @@ const menuItems = [
     { title: t('nav.proyecto', pathname), href: '#proyecto' },
     { title: t('nav.ubicacion', pathname), href: '#ubicacion' }
 ];
+
+const serviciosItems = [
+    { title: t('servicios.anatomia', pathname), href: '#anatomia' },
+    { title: t('servicios.consultoria', pathname), href: '#consultoria' },
+    { title: t('servicios.asesoramiento', pathname), href: '#asesoramiento' },
+    { title: t('servicios.talleres', pathname), href: '#talleres' },
+    { title: t('servicios.participacion', pathname), href: '#participacion' },
+];
 ---
 
 <div class="navbar-container">
@@ -20,7 +28,18 @@ const menuItems = [
         </button>
         
         <div class="nav-links">
-            {menuItems.map(item => (
+            {menuItems.slice(0, 4).map(item => (
+                <a href={item.href} class="nav-item">{item.title}</a>
+            ))}
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-toggle">{t('nav.servicios', pathname)}</button>
+                <div class="dropdown-menu">
+                    {serviciosItems.map(item => (
+                        <a href={item.href} class="dropdown-item">{item.title}</a>
+                    ))}
+                </div>
+            </div>
+            {menuItems.slice(4).map(item => (
                 <a href={item.href} class="nav-item">{item.title}</a>
             ))}
         </div>
@@ -40,11 +59,31 @@ const menuItems = [
             navLinks?.classList.toggle('active');
         });
 
-        document.querySelectorAll('.nav-item').forEach(link => {
+        document.querySelectorAll('.nav-item:not(.dropdown-toggle)').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn?.classList.remove('active');
                 navLinks?.classList.remove('active');
             });
+        });
+
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        dropdownToggle?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownMenu?.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.dropdown-item').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownMenu?.classList.remove('open');
+                mobileMenuBtn?.classList.remove('active');
+                navLinks?.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            dropdownMenu?.classList.remove('open');
         });
     });
 </script>
