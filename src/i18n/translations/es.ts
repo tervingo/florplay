@@ -78,7 +78,7 @@ servicios: {
     asesoramiento: 'Asesoramiento para el Terapeuta',
     asesoramientotext: 'Servicio online destinado a todo aquel terapeuta que quiera responder alguna inquietud y/o ampliar su perspectiva hacia una visión holística e integrativa del cuerpo humano y su salud, con el fin de adquirir nuevas herramientas que puedan ser útiles para el acompañamiento y reconducción de la salud de sus pacientes.',
     asesoramientoformtext: 'Para más información, rellena',
-    formProfesion: 'Profesión',
+    formProfesion: 'Profesión/Dedicación',
     formTemasInteres: 'Temas de interés para responder y/o ampliar el conocimiento',
     talleres: 'Talleres de Autoconocimiento',
     participacion: 'Participación Conjunta',
