@@ -18,43 +18,33 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Google Analytics - Se cargará condicionalmente -->
-    <script id="ga-script" type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-D3EEJ9B3NT');
-    </script>
   </head>
-  
+
   <body>
-    <slot />  <!-- Aquí se insertará el contenido de las páginas -->
+    <slot />
     <Footer/>
     <CookieBanner />
 
-    <!-- Script para manejar la carga condicional de GA -->
     <script>
       function loadGoogleAnalytics() {
         const consent = localStorage.getItem('cookieConsent');
-        if (consent === 'accepted') {
-          // Crear y cargar el script de GA
-          const gaScript = document.createElement('script');
-          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D3EEJ9B3NT';
-          gaScript.async = true;
-          document.head.appendChild(gaScript);
-    
-          // Activar el script inline de GA
-          const inlineScript = document.getElementById('ga-script') as HTMLScriptElement;
-          if (inlineScript) {
-            inlineScript.type = 'text/javascript';
-          }
-        }
+        if (consent !== 'accepted') return;
+        if ((window as any).__gaLoaded) return;
+        (window as any).__gaLoaded = true;
+
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        function gtag(...args: any[]){ ((window as any).dataLayer as any[]).push(args); }
+        (window as any).gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-D3EEJ9B3NT');
+
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-D3EEJ9B3NT';
+        script.async = true;
+        document.head.appendChild(script);
       }
-    
-      // Cargar GA al inicio si ya hay consentimiento
+
       document.addEventListener('DOMContentLoaded', loadGoogleAnalytics);
-    
-      // Escuchar cambios en el consentimiento
       window.addEventListener('cookieConsentChanged', loadGoogleAnalytics);
     </script>
   </body>
