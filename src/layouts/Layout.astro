@@ -18,34 +18,29 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
+    <!-- Google Analytics con Consent Mode v2 -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 2000,
+      });
+    </script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-D3EEJ9B3NT"></script>
+    <script is:inline>
+      gtag('js', new Date());
+      gtag('config', 'G-D3EEJ9B3NT');
+    </script>
   </head>
 
   <body>
     <slot />
     <Footer/>
     <CookieBanner />
-
-    <script>
-      function loadGoogleAnalytics() {
-        const consent = localStorage.getItem('cookieConsent');
-        if (consent !== 'accepted') return;
-        if ((window as any).__gaLoaded) return;
-        (window as any).__gaLoaded = true;
-
-        (window as any).dataLayer = (window as any).dataLayer || [];
-        function gtag(...args: any[]){ ((window as any).dataLayer as any[]).push(args); }
-        (window as any).gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', 'G-D3EEJ9B3NT');
-
-        const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-D3EEJ9B3NT';
-        script.async = true;
-        document.head.appendChild(script);
-      }
-
-      document.addEventListener('DOMContentLoaded', loadGoogleAnalytics);
-      window.addEventListener('cookieConsentChanged', loadGoogleAnalytics);
-    </script>
   </body>
 </html>

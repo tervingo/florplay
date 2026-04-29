@@ -102,17 +102,36 @@ const pathname = Astro.url.pathname;
     acceptButton?.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'accepted');
       cookieBanner?.style.setProperty('display', 'none');
-      // Disparar evento para cargar GA
-      window.dispatchEvent(new Event('cookieConsentChanged'));
+      (window as any).gtag?.('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+      });
     });
 
     rejectButton?.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'rejected');
       cookieBanner?.style.setProperty('display', 'none');
-      // Eliminar cookies de GA si existen
+      (window as any).gtag?.('consent', 'update', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
       document.cookie = '_ga=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
       document.cookie = '_ga_G-D3EEJ9B3NT=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     });
+
+    // Si ya aceptó en una visita anterior, actualizar consentimiento
+    if (cookieConsent === 'accepted') {
+      (window as any).gtag?.('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+      });
+    }
   }
 
   document.addEventListener('DOMContentLoaded', initCookieBanner);
