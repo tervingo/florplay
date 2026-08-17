@@ -28,7 +28,7 @@ export function getStaticPaths() {
 // Define el array de imágenes
 const manos = [
   `${base}/images/menis.jpg`,
-  `${base}/images/manos_bn.jpg`,
+//  `${base}/images/manos_bn.jpg`,
 ];
 
 const logos = [
@@ -84,7 +84,7 @@ const videos = [
     
       <div class="centered">
         <img 
-          src={`${base}/images/flor_abril2026.jpg`}
+          src={`${base}/images/flor_agosto2026.jpg`}
           alt="Slider image"
           width="350px"
           height="500px"
@@ -269,13 +269,23 @@ const videos = [
   <h3>{t('proposito.integconsultahead', pathname)}</h3>
 </div>
 
+        <div class="centered">
+            <img 
+              src={`${base}/images/menis.jpg`}
+              alt="cerebro"
+              width="350px"
+              height="500px"
+            />
+        </div>
+
+<!-- 
     <div class="slider-section">
         <ImageSlider 
           images={manos} 
           width="350px" 
           height="500px" 
         />
-    </div>
+    </div> -->
 
   <div class="texto-centrado">
 
