@@ -8,7 +8,7 @@ const menuItems = [
     { title: t('nav.inicio', pathname), href: '#inicio' },
     { title: t('nav.trayectoria', pathname), href: '#trayectoria' },
     { title: t('nav.proposito', pathname), href: '#proposito' },
-    { title: t('nav.proyecto', pathname), href: '#proyecto' },
+    // { title: t('nav.proyecto', pathname), href: '#proyecto' },
     { title: t('nav.ubicacion', pathname), href: '#ubicacion' }
 ];
 
@@ -19,6 +19,9 @@ const serviciosItems = [
     { title: t('servicios.talleres', pathname), href: '#talleres' },
     { title: t('servicios.participacion', pathname), href: '#participacion' },
 ];
+
+// Servicios goes right after Propósito
+const splitIndex = menuItems.findIndex(item => item.href === '#proposito') + 1;
 ---
 
 <div class="navbar-container">
@@ -28,7 +31,7 @@ const serviciosItems = [
         </button>
         
         <div class="nav-links">
-            {menuItems.slice(0, 4).map(item => (
+            {menuItems.slice(0, splitIndex).map(item => (
                 <a href={item.href} class="nav-item">{item.title}</a>
             ))}
             <div class="nav-dropdown">
@@ -39,7 +42,7 @@ const serviciosItems = [
                     ))}
                 </div>
             </div>
-            {menuItems.slice(4).map(item => (
+            {menuItems.slice(splitIndex).map(item => (
                 <a href={item.href} class="nav-item">{item.title}</a>
             ))}
         </div>
