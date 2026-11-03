@@ -15,7 +15,7 @@ const translations: Translation = {
   trayectoria: {
     titulo: "Professional Career",
     actualidad: "Current",
-    colegiada: "Member 17176 of the College of Physiotherapists of Catalonia",
+    colegiada: "Member 17176 of the Col·legi de Fisioterapeutes de Catalunya",
     master: "Master in Neuroscience",
     osteopata: "Osteopath Eur Ost DO",
     fisioterapeuta: "Degree in Physiotherapy",

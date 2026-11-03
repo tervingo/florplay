@@ -15,7 +15,7 @@ const translations: Translation = {
   trayectoria: {
     titulo: "Trayectoria Profesional",
     actualidad: "Actualidad",
-    colegiada: "Colegiada 17176 por el Colegio de Fisioterapeutas de Catalunya",
+    colegiada: "Colegiada 17176 por el Col·legi de Fisioterapeutes de Catalunya",
     master: "Máster en Neurociencias",
     osteopata: "Osteópata Eur Ost DO",
     fisioterapeuta: "Licenciada en Fisioterapia",
