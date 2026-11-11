@@ -21,8 +21,12 @@ const translations: Translation = {
     fisioterapeuta: "Licenciada en Fisioterapia",
     anatomia: "Disectora y Docente de Anatomía Humana",
     edufisica: "Maestría y Profesorado de Educación Física",
-    especializacion: "Especialización en Educación Física Especial"
-},
+    especializacion: "Especialización en Educación Física Especial",
+    aportes: "Aportes De Investigación en Salud",
+    aportestext1: "TFM Osteopatía: Efecto del tratamiento Osteopático Craneal en paciente con encefalopatía postanóxica valorada con Tinnetti y RDRS-2; Case Report. Escola d´ Osteopatía de Barcelona (EOB) Certificación Universitat Pompeu Fabra Y European School of Osteopathy. Año: 2025.",
+    aportestext2: "Proyecto Investigación Dirigida, PID: Variaciones anatómicas en el Círculo Arterial de Willis (CAW) y su asociación con anomalías vasculares. Disertación: Jornadas Metropolitana de Kinesiología y Fisiatría. Universidad de Buenos Aires (UBA). Año: 2017.",
+    aportestext3: "Proyecto Investigación Dirigida, PID: Variación anatómica en la formación y emergencia del nervio ciático: Case Report. Facultad de Medicina, Universidad de Buenos Aires (UBA). Año 2017. Revista Argentina Anatomía Online 2017; 8 (1): 8-12. <a href=\"https://www.revista-anatomia.com.ar/archivo/2017-1-revista-argentina-de-anatomia-online.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Ver artículo (PDF)</a>",
+  },  
 proposito: {
     titulo: 'Propósito y enfoque terapéutico',
     proposhead: 'Propósito',

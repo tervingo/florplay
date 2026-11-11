@@ -147,6 +147,15 @@ const videos = [
           Instituto Superior de Educación Física Dr. Enrique Romero Brest. {t('trayectoria.especializacion', pathname)}
           <p>2009 - 2012</p>
         </div>
+      
+        <h3>{t('trayectoria.aportes', pathname)}</h3>
+        <div class="contenedor-texto">
+          {t('trayectoria.aportestext1', pathname)}
+        </div>
+        <div class="contenedor-texto">
+          {t('trayectoria.aportestext2', pathname)}
+        </div>
+        <div class="contenedor-texto" set:html={t('trayectoria.aportestext3', pathname)} />
 
 <!--         <div class="author-info">
           <a href="https://www.linkedin.com/in/mar%C3%ADa-florencia-vidal-a661b717b/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
