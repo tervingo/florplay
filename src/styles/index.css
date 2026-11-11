@@ -55,6 +55,11 @@ h3 {
 h4 {
   font-size: 1.2rem;
 }
+
+.h3-bold {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 /* Sections */
 .slider-section,
 .youtube-section {
@@ -239,6 +244,10 @@ iframe {
   h3 {
     font-size: 1.25rem;
   }
+  .h3-bold {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
 
   .quote-container,
   .quote-author,
@@ -271,6 +280,10 @@ iframe {
     font-size: 1.25rem;
   }
 
+  .h3-bold {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
   .quote-container {
     font-size: 1rem;
   }
