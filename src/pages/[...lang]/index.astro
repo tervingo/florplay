@@ -149,21 +149,28 @@ const videos = [
         </div>
       
         <div class="h3-bold">{t('trayectoria.aportes', pathname)}</div>
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext11', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext12', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext13', pathname)} />
+        <div class="contenedor-texto">
+          <p>{t('trayectoria.aportestext11', pathname)}</p>
+          <p>{t('trayectoria.aportestext12', pathname)}</p>
+          <p>{t('trayectoria.aportestext13', pathname)}</p>
+        </div>
 
-        <br/>
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext21', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext22', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext23', pathname)} />
+        <div class="contenedor-texto"> 
+          <p>{t('trayectoria.aportestext21', pathname)}</p>
+          <p>{t('trayectoria.aportestext22', pathname)}</p>
+          <p>{t('trayectoria.aportestext23', pathname)}</p>
+        </div>
 
-        <br/>
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext31', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext32', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext33', pathname)} />
-        <div class="contenedor-texto" set:html={t('trayectoria.aportestext34', pathname)} />
-<!--         <div class="author-info">
+        <div class="contenedor-texto">
+          <p>{t('trayectoria.aportestext31', pathname)}</p>
+          <p>{t('trayectoria.aportestext32', pathname)}</p>
+          <p>{t('trayectoria.aportestext33', pathname)}</p>
+          <div set:html={t('trayectoria.aportestext34', pathname)} />
+        </div>
+
+
+
+        <!--         <div class="author-info">
           <a href="https://www.linkedin.com/in/mar%C3%ADa-florencia-vidal-a661b717b/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
             <img 
             src={`${base}/images/linkedin-svgrepo-com.svg`}
